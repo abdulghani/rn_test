@@ -10,7 +10,8 @@
     "ios:podinstall": "pod install --project-directory=ios/",
     "test:base": "node --expose-gc ./node_modules/.bin/jest --config ./jest.config.ts --runInBand --coverage --logHeapUsage",
     "test": "npm run test:base -- --silent --coverage --ci",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "native-base": "^3.3.3",
@@ -35,6 +36,7 @@
     "jest": "^27.4.7",
     "jest-junit": "^13.0.0",
     "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "^2.5.1",
     "react-test-renderer": "17.0.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
