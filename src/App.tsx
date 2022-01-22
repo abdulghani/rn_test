@@ -82,7 +82,7 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}
         >
-          <Section title="hello there">hello world</Section>
+          <Section title="hello there">hello world. this is a new text</Section>
           <Section title="Step One">
             <Text style={styles.highlight}>App.tsx</Text> to change this screen
             and then come back to see your edits. hello
