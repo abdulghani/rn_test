@@ -2,9 +2,11 @@ name: RN CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   install_dependencies:
@@ -61,5 +63,5 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
           path: |
             node_modules
-      - name: lint
+      - name: run tests
         run: npm run test:ci
