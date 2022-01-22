@@ -26,7 +26,7 @@ jobs:
         run: |
           sudo npm install -g npm &&
           npm --version &&
-          npm list -g
+          npm list -g --depth 0
       - name: install dependencies
         run: |
           npm ci
@@ -83,7 +83,7 @@ jobs:
         run: |
           sudo npm install -g npm &&
           npm --version &&
-          npm list -g
+          npm list -g --depth 0
       - name: install dependencies
         run: |
           npm ci
