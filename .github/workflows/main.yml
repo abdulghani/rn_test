@@ -27,6 +27,8 @@ jobs:
         run: npm install
 
   lint:
+    needs:
+      - install_dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -44,6 +46,8 @@ jobs:
         run: npm run lint:all
 
   tests:
+    needs:
+      - install_dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
