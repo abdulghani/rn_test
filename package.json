@@ -6,17 +6,18 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator \"iPhone 11 Pro\"",
     "start": "react-native start",
-    "postinstall": "npm run ios:podinstall",
     "ios:podinstall": "[ ! $CI ] && pod install --project-directory=ios/ || echo \"RUNNING IN CI ENV\"",
-    "test:base": "node --expose-gc ./node_modules/.bin/jest --config ./jest.config.ts --runInBand --coverage --logHeapUsage",
+    "test:base": "node --expose-gc ./node_modules/.bin/jest --config ./.jest.config.ts --runInBand --coverage --logHeapUsage",
     "test": "npm run test:base -- --silent --detectOpenHandles",
     "test:ci": "npm run test:base -- --silent --ci",
-    "check:staged": "lint-staged --config ./lintstagedrc.json --concurrent false --allow-empty",
+    "check:staged": "lint-staged --config ./.lintstagedrc.json --concurrent false --allow-empty",
     "lint:all": "eslint . --ext .js,.jsx,.ts,.tsx --no-inline-config",
     "lint:changed": "eslint --no-inline-config --quiet",
     "format:all": "prettier . --config ./.prettierrc.json --write --ignore-unknown",
     "format:changed": "prettier --config ./.prettierrc.json --write --ignore-unknown",
-    "prepare": "[ ! $CI ] && husky install || echo \"RUNNING IN CI ENV\""
+    "prepare": "npm run husky:install && npm run update:app-name && npm run ios:podinstall",
+    "husky:install": "[ ! $CI ] && husky install || echo \"RUNNING IN CI ENV\"",
+    "update:app-name": "ts-node ./.scripts/update-name.ts"
   },
   "dependencies": {
     "native-base": "^3.3.3",
@@ -31,8 +32,10 @@
     "@jest/types": "^27.4.2",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^27.4.0",
+    "@types/plist": "^3.0.2",
     "@types/react-native": "^0.66.4",
     "@types/react-test-renderer": "^17.0.1",
+    "@types/xml2js": "^0.4.9",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "babel-jest": "^27.4.6",
@@ -43,10 +46,12 @@
     "jest-junit": "^13.0.0",
     "lint-staged": "^12.2.2",
     "metro-react-native-babel-preset": "^0.66.2",
+    "plist": "^3.0.4",
     "prettier": "^2.5.1",
     "react-test-renderer": "17.0.2",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "xml2js": "^0.4.23"
   },
   "resolutions": {
     "@types/react": "^17"
