@@ -1,4 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo "\nCHECKING STAGED FILES...\n"
+
 npm run check:staged
+
+echo "\nFILES OK. GOOD JOB 👍\n"
