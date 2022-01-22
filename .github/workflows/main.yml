@@ -65,3 +65,22 @@ jobs:
             node_modules
       - name: run tests
         run: npm run test:ci
+
+  build_ios:
+    needs:
+      - install_dependencies
+      - lint
+      - tests
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: "npm"
+      - name: install latest npm
+        run: npm install -g npm
+      - name: install dependencies
+        run: npm install
+      - name: install pods
+        run: pod install --project-directory=ios
