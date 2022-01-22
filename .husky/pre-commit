@@ -9,3 +9,5 @@ notify_error() {
 }
 
 npm run check:staged || notify_error
+
+echo "\nFILES OK. GOOD JOB 👍\n"
