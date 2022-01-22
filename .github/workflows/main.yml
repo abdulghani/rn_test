@@ -22,11 +22,13 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
           path: |
             node_modules
+      - name: install latest npm
+        run: |
+          npm install -D npm &&
+          ./node_modules/.bin/npm --version
       - name: install dependencies
         run: |
-          sudo npm install -g npm &&
-          npm --version &&
-          npm install
+          ./node_modules/.bin/npm install
 
   lint:
     needs:
@@ -76,10 +78,12 @@ jobs:
         with:
           node-version: 14.x
           check-latest: true
+      - name: install latest npm
+        run: |
+          npm install -D npm &&
+          ./node_modules/.bin/npm --version
       - name: install dependencies
         run: |
-          sudo npm install -g npm &&
-          npm --version &&
-          npm install
+          ./node_modules/.bin/npm install
       - name: install pods
         run: bash ./.scripts/ios-podinstall.sh
