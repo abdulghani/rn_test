@@ -3,6 +3,9 @@
 
 echo "\nCHECKING STAGED FILES...\n"
 
-npm run check:staged
+notify_error() {
+    echo "\nPLEASE CHECK ERRORS 🛑\n"
+    exit 1
+}
 
-echo "\nFILES OK. GOOD JOB 👍\n"
+npm run check:staged || notify_error

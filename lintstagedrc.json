@@ -1,4 +1,4 @@
 {
-  "*.{ts,tsx,js,jsx,css,md,json}": "npm run format:changed",
-  "*.{ts,tsx,js,jsx}": "npm run lint:changed"
+  "*.{css,md,json}": ["npm run format:changed"],
+  "*.{ts,tsx,js,jsx}": ["npm run format:changed", "npm run lint:changed"]
 }

@@ -10,7 +10,7 @@
     "ios:podinstall": "pod install --project-directory=ios/",
     "test:base": "node --expose-gc ./node_modules/.bin/jest --config ./jest.config.ts --runInBand --coverage --logHeapUsage",
     "test": "npm run test:base -- --silent --coverage --ci",
-    "check:staged": "lint-staged --config ./lintstagedrc.json --concurrent false --verbose",
+    "check:staged": "lint-staged --config ./lintstagedrc.json --concurrent false --allow-empty",
     "lint:all": "eslint . --ext .js,.jsx,.ts,.tsx --no-inline-config",
     "lint:changed": "eslint --no-inline-config --quiet",
     "format:all": "prettier . --config ./.prettierrc.json --write --ignore-unknown",
