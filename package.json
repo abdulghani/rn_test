@@ -9,7 +9,7 @@
     "postinstall": "npm run ios:podinstall",
     "ios:podinstall": "pod install --project-directory=ios/",
     "test:base": "node --expose-gc ./node_modules/.bin/jest --config ./jest.config.ts --runInBand --coverage --logHeapUsage",
-    "test": "npm run test:base -- --silent --coverage --ci",
+    "test": "npm run test:base -- --silent --coverage --detectOpenHandles",
     "check:staged": "lint-staged --config ./lintstagedrc.json --concurrent false --allow-empty",
     "lint:all": "eslint . --ext .js,.jsx,.ts,.tsx --no-inline-config",
     "lint:changed": "eslint --no-inline-config --quiet",
