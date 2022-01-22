@@ -16,7 +16,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-          check-latest: true
       - name: cache node_modules
         uses: actions/cache@v2
         with:
@@ -25,6 +24,7 @@ jobs:
             node_modules
       - name: install dependencies
         run: |
+          sudo npm install -g npm &&
           npm --version &&
           npm install
 
@@ -78,7 +78,8 @@ jobs:
           check-latest: true
       - name: install dependencies
         run: |
-          npm --version
+          sudo npm install -g npm &&
+          npm --version &&
           npm install
       - name: install pods
         run: bash ./.scripts/ios-podinstall.sh
