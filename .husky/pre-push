@@ -1,0 +1,16 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+lint_files() {
+    echo "\nCHECK FOR ERRORS"
+    npm run lint:all
+}
+
+run_tests() {
+    echo "\nRUNNING TESTS"
+    npm run test
+    echo "\n\nPLEASE CHECK FOR WARNINGS ✋\n"
+}
+
+lint_files
+run_tests
