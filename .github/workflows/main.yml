@@ -24,7 +24,9 @@ jobs:
           path: |
             node_modules
       - name: update npm
-        run: sudo npm install -g npm
+        run: |
+          sudo npm install -g npm &&
+          npm --version
       - name: install dependencies
         run: npm install
 
@@ -79,7 +81,9 @@ jobs:
           node-version: 14.x
           cache: "npm"
       - name: install latest npm
-        run: npm install -g npm
+        run: |
+          npm install -g npm &&
+          npm --version
       - name: install dependencies
         run: npm install
       - name: install pods
