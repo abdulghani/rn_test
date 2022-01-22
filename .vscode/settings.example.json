@@ -31,7 +31,7 @@
     ".gitignore": true,
     ".prettierrc.json": true,
     ".eslintrc.js": true,
-    "**/package-lock.json": true,
+    "**/package-lock.json": false,
     ".commitlintrc.json": true,
     ".husky": true,
     ".jest": true,
@@ -63,7 +63,8 @@
     "babel.config.js": true,
     "metro.config.js": true,
     "ios/": true,
-    "android/": true
+    "android/": true,
+    ".npmrc": true
   },
   "jestrunner.jestCommand": "npm run test:file --"
 }

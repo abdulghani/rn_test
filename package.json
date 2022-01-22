@@ -2,6 +2,12 @@
   "name": "rn_test",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "^14",
+    "npm": "^8",
+    "yarn": "\n\nUSE NPM!\n\n",
+    "pnpm": "\n\nUSE NPM!\n\n"
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator \"iPhone 11 Pro\"",
