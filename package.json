@@ -7,7 +7,7 @@
     "ios": "react-native run-ios --simulator \"iPhone 11 Pro\"",
     "start": "react-native start",
     "postinstall": "npm run ios:podinstall",
-    "ios:podinstall": "pod install --project-directory=ios/",
+    "ios:podinstall": "[ ! $CI ] && pod install --project-directory=ios/ || echo \"RUNNING IN CI ENV\"",
     "test:base": "node --expose-gc ./node_modules/.bin/jest --config ./jest.config.ts --runInBand --coverage --logHeapUsage",
     "test": "npm run test:base -- --silent --coverage --detectOpenHandles",
     "test:ci": "npm run test:base -- --silent --coverage --detectOpenHandles --ci",
