@@ -62,6 +62,13 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  function shadow() {
+    const isDarkMode = true;
+    const TEMP_IS_GOOD = "hello";
+  }
+
+  function emptyFunc() {}
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />

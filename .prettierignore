@@ -2,3 +2,9 @@
 /ios
 /.coverage
 /node_modules
+
+# ROOT CONFIG
+/*.js
+/*.ts
+/*.json
+/.watchmanconfig
