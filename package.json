@@ -7,6 +7,7 @@
     "ios": "react-native run-ios --simulator \"iPhone 11 Pro\"",
     "start": "react-native start",
     "ios:podinstall": "[ ! $CI ] && pod install --project-directory=ios/ || echo \"RUNNING IN CI ENV\"",
+    "ios:clean": "[ ! $CI ] && bash ./.scripts/clean-pods.sh || echo \"RUNNING IN CI ENV\"",
     "test:base": "node --expose-gc ./node_modules/.bin/jest --config ./.jest.config.ts --runInBand --coverage --logHeapUsage",
     "test": "npm run test:base -- --silent --detectOpenHandles",
     "test:ci": "npm run test:base -- --silent --ci",
@@ -15,9 +16,10 @@
     "lint:changed": "eslint --no-inline-config --quiet",
     "format:all": "prettier . --config ./.prettierrc.json --write --ignore-unknown",
     "format:changed": "prettier --config ./.prettierrc.json --write --ignore-unknown",
-    "prepare": "npm run husky:install && npm run update:app-name && npm run ios:podinstall",
+    "prepare": "npm run vscode:settings && npm run husky:install && npm run ios:podinstall",
     "husky:install": "[ ! $CI ] && husky install || echo \"RUNNING IN CI ENV\"",
-    "update:app-name": "ts-node ./.scripts/update-name.ts"
+    "update:app-name": "ts-node ./.scripts/update-name.ts",
+    "vscode:settings": "[ ! $CI ] && cp ./.vscode/settings.example.json ./.vscode/settings.json || echo \"RUNNING IN CI ENV\""
   },
   "dependencies": {
     "native-base": "^3.3.3",
