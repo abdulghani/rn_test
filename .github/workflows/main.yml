@@ -16,19 +16,17 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-          cache: "npm"
+          check-latest: true
       - name: cache node_modules
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
           path: |
             node_modules
-      - name: update npm
-        run: |
-          sudo npm install -g npm@latest &&
-          npm --version
       - name: install dependencies
-        run: npm install
+        run: |
+          npm --version &&
+          npm install
 
   lint:
     needs:
@@ -39,7 +37,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-          cache: "npm"
       - name: cache node_modules
         uses: actions/cache@v2
         with:
@@ -58,7 +55,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-          cache: "npm"
       - name: cache node_modules
         uses: actions/cache@v2
         with:
@@ -79,12 +75,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-          cache: "npm"
-      - name: install latest npm
-        run: |
-          npm install -g npm@latest &&
-          npm --version
+          check-latest: true
       - name: install dependencies
-        run: npm install
+        run: |
+          npm --version
+          npm install
       - name: install pods
-        run: pod install --project-directory=ios
+        run: bash ./.scripts/ios-podinstall.sh
