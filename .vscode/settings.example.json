@@ -1,0 +1,69 @@
+{
+  "editor.formatOnSave": true,
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "javascript.preferences.importModuleSpecifier": "shortest",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    ".github": true,
+    ".vscode": true,
+    ".gitignore": true,
+    ".prettierrc.json": true,
+    ".eslintrc.js": true,
+    "**/package-lock.json": true,
+    ".commitlintrc.json": true,
+    ".husky": true,
+    ".jest": true,
+    "**/jest.config.ts": true,
+    ".circleci": true,
+    "lerna.json": true,
+    ".scripts": true,
+    "**/.webpack": true,
+    "**/.serverless": true,
+    "webpack.config.js": true,
+    "tsconfig.json": false,
+    "docker-compose.yml": true,
+    "serverless-base-config.json": true,
+    "node_modules": true,
+    ".env.example": true,
+    "coverage": true,
+    ".notes": true,
+    "serverless.ts": true,
+    ".coverage": true,
+    ".gitmodules": true,
+    "junit.xml": true,
+    ".buckconfig": true,
+    ".editorconfig": true,
+    ".gitattributes": true,
+    ".jest.config.ts": true,
+    ".lintstagedrc.json": true,
+    ".prettierignore": true,
+    ".watchmanconfig": true,
+    "babel.config.js": true,
+    "metro.config.js": true,
+    "ios/": true,
+    "android/": true
+  },
+  "jestrunner.jestCommand": "npm run test:file --"
+}
