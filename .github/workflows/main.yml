@@ -24,11 +24,12 @@ jobs:
             node_modules
       - name: install latest npm
         run: |
-          npm install -D npm &&
-          ./node_modules/.bin/npm --version
+          sudo npm install -g npm &&
+          npm --version &&
+          npm list -g
       - name: install dependencies
         run: |
-          ./node_modules/.bin/npm install
+          npm ci
 
   lint:
     needs:
@@ -80,10 +81,11 @@ jobs:
           check-latest: true
       - name: install latest npm
         run: |
-          npm install -D npm &&
-          ./node_modules/.bin/npm --version
+          sudo npm install -g npm &&
+          npm --version &&
+          npm list -g
       - name: install dependencies
         run: |
-          ./node_modules/.bin/npm install
+          npm ci
       - name: install pods
         run: bash ./.scripts/ios-podinstall.sh
