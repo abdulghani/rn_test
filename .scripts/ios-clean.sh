@@ -22,13 +22,11 @@ ios_clean() {
         rm -rf "$PROJECT_PATH/ios/Pods" && echo "REMOVED PODS ($PROJECT_PATH/ios/Pods)"
         rm -rf "$PROJECT_PATH/ios/Podfile.lock" && echo "REMOVED PODFILE LOCK FILE ($PROJECT_PATH/ios/Podfile.lock)"
 
-        pod cache clean 'RCT-Folly' --all && echo "REMOVED POD CACHE (RCT-Folly)"
-
         cd "$PROJECT_PATH/ios"
         xcodebuild clean
 
         echo ""
-        echo "LOCAL PODS CLEANED. DO POD INSTALL"
+        echo "LOCAL PODS CLEANED. DO POD INSTALL ✅"
     else
         echo ""
         echo "OPERATION CANCELLED"

@@ -39,7 +39,7 @@ reset_pod() {
         pod setup
 
         echo ""
-        echo "SYSTEM PODS CLEANED. DO POD INSTALL"
+        echo "LOCAL PODS CLEANED. DO POD INSTALL ✅"
     else
         echo ""
         echo "OPERATION CANCELLED"
