@@ -1,6 +1,6 @@
-# REACT NATIVE PROJECT
+# React Native Project
 
-## USAGE
+## Usage
 
 ### Install
 
@@ -24,7 +24,7 @@ If you're using `vscode`, install these vscode extensions for this project
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (Dirk Baeumer)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (Prettier)
 
-## IOS Troubleshooting
+## iOS Troubleshooting
 
 if ios don't build. do the following
 
