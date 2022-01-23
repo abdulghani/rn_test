@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: cache node_modules
+      - name: restore node_modules cache
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -25,11 +25,11 @@ jobs:
       - name: install latest npm
         run: |
           npm install -g npm &&
-          npm --version &&
+          echo "CURRENT NPM VERSION ($(npm --version))" &&
           npm list -g --depth 0
       - name: install dependencies
         run: |
-          npm ci
+          npm install
 
   lint:
     needs:
@@ -40,14 +40,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: cache node_modules
+      - name: restore node_modules cache
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           path: |
             node_modules
       - name: lint (CHECK FOR WARNINGS ✋)
-        run: npm run lint:all
+        run: ./node_modules/.bin/npm run lint:all
 
   tests:
     needs:
@@ -58,14 +58,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: cache node_modules
+      - name: restore node_modules cache
         uses: actions/cache@v2
         with:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           path: |
             node_modules
       - name: run tests
-        run: npm run test:ci
+        run: ./node_modules/.bin/npm run test:ci
 
   build_ios:
     needs:
@@ -79,13 +79,19 @@ jobs:
         with:
           node-version: 14.x
           check-latest: true
+      - name: restore node_modules cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          path: |
+            node_modules
       - name: install latest npm
         run: |
           npm install -g npm &&
-          npm --version &&
+          echo "CURRENT NPM VERSION ($(npm --version))" &&
           npm list -g --depth 0
       - name: install dependencies
         run: |
-          npm ci
+          npm install
       - name: install pods
         run: bash ./.scripts/ios-podinstall.sh

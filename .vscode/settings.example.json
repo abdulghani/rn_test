@@ -64,7 +64,8 @@
     "metro.config.js": true,
     "ios/": true,
     "android/": true,
-    ".npmrc": true
+    ".npmrc": true,
+    ".nvmrc": true
   },
   "jestrunner.jestCommand": "npm run test:file --"
 }
