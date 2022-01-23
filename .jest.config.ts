@@ -21,10 +21,15 @@ const config: Config.InitialOptions = {
   ],
   transform: {
     "\\.tsx?$": "babel-jest",
-    "\\.jsx$": "babel-jest",
+    "\\.jsx?$": "babel-jest",
   },
   testPathIgnorePatterns: ["/node_modules/"],
-  transformIgnorePatterns: ["/node_modules/", "\\.pnp\\.[^\\/]+$"],
+  transformIgnorePatterns: [
+    // INCLUDE REACT NATIVE MODULE TO BE TRANSFORMED
+    // https://jestjs.io/docs/tutorial-react-native
+    "node_modules/(?!(@react-native|react-native|react-native-button|react-native-push-notification|@react-native-community)/)",
+    "\\.pnp\\.[^\\/]+$",
+  ],
   rootDir: process.cwd(),
   reporters: ["default", "jest-junit"],
   testResultsProcessor: "jest-junit",
