@@ -23,10 +23,11 @@
     "lint:changed": "eslint --no-inline-config --quiet",
     "format:all": "prettier . --config ./.prettierrc.json --write --ignore-unknown",
     "format:changed": "prettier --config ./.prettierrc.json --write --ignore-unknown",
-    "prepare": "npm run vscode:settings && npm run husky:install && npm run ios:podinstall",
+    "prepare": "npm run vscode:settings && npm run husky:install && npm run ios:setup && npm run ios:podinstall",
     "husky:install": "[ ! $CI ] && husky install || echo \"RUNNING IN CI ENV\"",
     "update:app-name": "ts-node ./.scripts/update-name.ts",
-    "vscode:settings": "[ ! $CI ] && cp ./.vscode/settings.example.json ./.vscode/settings.json || echo \"RUNNING IN CI ENV\""
+    "vscode:settings": "[ ! $CI ] && cp ./.vscode/settings.example.json ./.vscode/settings.json || echo \"RUNNING IN CI ENV\"",
+    "ios:setup": "[ ! $CI ] && bash ./.scripts/ios-setup.sh || echo \"RUNNING IN CI ENV\""
   },
   "dependencies": {
     "native-base": "^3.3.3",
