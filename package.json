@@ -16,7 +16,7 @@
     "ios:clean": "bash ./.scripts/ios-clean.sh",
     "ios:reset": "[ ! $CI ] && bash ./.scripts/ios-reset.sh || echo \"RUNNING IN CI ENV\"",
     "test:base": "node --expose-gc ./node_modules/.bin/jest --config ./.jest.config.ts --runInBand --coverage --logHeapUsage",
-    "test": "npm run test:base -- --silent --detectOpenHandles",
+    "test": "npm run test:base -- --detectOpenHandles",
     "test:ci": "npm run test:base -- --silent --ci",
     "check:staged": "lint-staged --config ./.lintstagedrc.json --concurrent false --allow-empty",
     "lint:all": "eslint . --ext .js,.jsx,.ts,.tsx --no-inline-config",

@@ -67,5 +67,5 @@
     ".npmrc": true,
     ".nvmrc": true
   },
-  "jestrunner.jestCommand": "npm run test:file --"
+  "jestrunner.jestCommand": "npm run test -- --no-cache --verbose --watch --detectOpenHandles --runInBand --coverage --testPathPattern"
 }

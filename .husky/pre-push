@@ -8,7 +8,7 @@ lint_files() {
 
 run_tests() {
     echo "\nRUNNING TESTS"
-    npm run test
+    npm run test -- --silent --runInBand --coverage
     echo "\n\nPLEASE CHECK FOR WARNINGS ✋\n"
 }
 
