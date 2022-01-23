@@ -10,6 +10,7 @@
 
 import React from "react";
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -19,6 +20,7 @@ import {
   View,
   ViewStyle,
 } from "react-native";
+import PushNotification from "react-native-push-notification";
 import {
   Colors,
   DebugInstructions,
@@ -26,6 +28,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
+import { NOTIFICATION_CHANNEL_ID } from "./utils/configure-push-notification";
 
 const Section: React.FC<{
   title: string;
@@ -71,6 +74,14 @@ const App = () => {
 
   function emptyFunc() {}
 
+  function triggerNotification() {
+    PushNotification.localNotification({
+      channelId: NOTIFICATION_CHANNEL_ID,
+      title: "hello",
+      message: "hello world",
+    });
+  }
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
@@ -84,7 +95,10 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}
         >
-          <Section title="hello there">hello world. this is a new text</Section>
+          <Section title="hello there">
+            hello world. this is a new text. new format
+            <Button onPress={triggerNotification} title="trigger" />
+          </Section>
           <Section title="Step One">
             <Text style={styles.highlight}>App.tsx</Text> to change this screen
             and then come back to see your edits. hello

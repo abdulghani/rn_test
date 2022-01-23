@@ -1,5 +1,9 @@
 #!/bin/bash
 
-brew install watchman
+if [[ ! "$(which watchman)" ]]; then
+    brew install watchman
+fi
 
-brew install cocoapods
+if [[ ! "$(which pod)" ]]; then
+    brew install cocoapods
+fi

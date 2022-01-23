@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
-  "typescript.preferences.importModuleSpecifier": "shortest",
-  "javascript.preferences.importModuleSpecifier": "shortest",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "relative",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

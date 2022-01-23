@@ -7,6 +7,17 @@ buildscript {
         compileSdkVersion = 30
         targetSdkVersion = 30
         ndkVersion = "21.4.7075529"
+
+        // https://github.com/zo0r/react-native-push-notification
+        // googlePlayServicesVersion = "<Your play services version>" // default: "+"
+        // firebaseMessagingVersion = "<Your Firebase version>" // default: "21.1.0"
+
+        // // Other settings
+        // compileSdkVersion = <Your compile SDK version> // default: 23
+        // buildToolsVersion = "<Your build tools version>" // default: "23.0.1"
+        // targetSdkVersion = <Your target SDK version> // default: 23
+        // supportLibVersion = "<Your support lib version>" // default: 23.1.1
+        // https://github.com/zo0r/react-native-push-notification END
     }
     repositories {
         google()
@@ -16,6 +27,10 @@ buildscript {
         classpath("com.android.tools.build:gradle:4.2.2")
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        // https://github.com/zo0r/react-native-push-notification
+        classpath('com.google.gms:google-services:4.3.3')
+        // https://github.com/zo0r/react-native-push-notification END
     }
 }
 
