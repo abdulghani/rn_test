@@ -1,22 +1,22 @@
-## REACT NATIVE PROJECT
+# REACT NATIVE PROJECT
 
-### USAGE
+## USAGE
 
-#### Install
+### Install
 
 `npm install`
 
-#### Running project
+### Running project
 
 - ios run `npm run ios`
 - android run `npm run android`
 
-#### Nvm Switcher
+### Nvm Switcher
 
 this project use `.nvmrc` to specify the node version. if you're using nvm\
 make sure you're set up nvm switcher for zsh/bash [here](https://github.com/nvm-sh/nvm#automatically-call-nvm-use).
 
-#### Extensions
+### Extensions
 
 If you're using `vscode`, install these vscode extensions for this project
 
