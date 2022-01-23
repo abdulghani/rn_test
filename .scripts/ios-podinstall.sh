@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_PATH="$(pwd)"
+PROJECT_PATH="$(pwd | sed -e 's/\/ios$//i')"
 
 pod_install() {
     echo ""
