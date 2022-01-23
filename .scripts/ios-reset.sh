@@ -5,21 +5,41 @@
 
 PROJECT_PATH="$(pwd)"
 
+prompt() {
+    read -p "CLEANING SYSTEM PODS. ARE YOU SURE? (Y/N) " ANSWER
+
+    shopt -s nocasematch
+    if [[ "$ANSWER" =~ ^([Yy]|yes)$ ]]; then
+        CONFIRMED=true
+    else
+        CONFIRMED=false
+    fi
+}
+prompt
+
 reset_pod() {
-    echo "CLEANING SYSTEM PODS..." && echo ""
+    if [[ CONFIRMED = true ]]; then
+        echo ""
+        echo "CLEANING SYSTEM PODS..." && echo ""
 
-    cd "$PROJECT_PATH/ios"
-    echo "EXECUTING FROM ($(pwd))" && echo ""
+        cd "$PROJECT_PATH/ios"
+        echo "EXECUTING FROM ($(pwd))" && echo ""
 
-    pod cache clean --all
-    rm -rf "$PROJECT_PATH/ios/Podfile.lock"
+        pod cache clean --all
+        rm -rf "$PROJECT_PATH/ios/Podfile.lock"
 
-    rm -rf ~/Library/Caches/CocoaPods && echo "SUCCESSFULLY REMOVE (~/Library/Caches/CocoaPods)"
-    rm -rf "$PROJECT_PATH/ios/Pods" && echo "SUCCESSFULLY REMOVE ($PROJECT_PATH/ios/Pods)"
-    rm -rf ~/Library/Developer/Xcode/DerivedData && echo "SUCCESSFULLY REMOVE (~/Library/Developer/Xcode/DerivedData)"
-    mkdir ~/Library/Developer/Xcode/DerivedData
-    pod deintegrate
-    pod setup
-    pod install
+        rm -rf ~/Library/Caches/CocoaPods && echo "SUCCESSFULLY REMOVE (~/Library/Caches/CocoaPods)"
+        rm -rf "$PROJECT_PATH/ios/Pods" && echo "SUCCESSFULLY REMOVE ($PROJECT_PATH/ios/Pods)"
+        rm -rf ~/Library/Developer/Xcode/DerivedData && echo "SUCCESSFULLY REMOVE (~/Library/Developer/Xcode/DerivedData)"
+        mkdir ~/Library/Developer/Xcode/DerivedData
+        pod deintegrate
+        pod setup
+
+        echo ""
+        echo "SYSTEM PODS CLEANED. DO POD INSTALL"
+    else
+        echo ""
+        echo "OPERATION CANCELLED"
+    fi
 }
 reset_pod

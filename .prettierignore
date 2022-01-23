@@ -2,9 +2,7 @@
 /ios
 /.coverage
 /node_modules
+/.github
 
 # ROOT CONFIG
-/*.js
-/*.ts
-/*.json
-/.watchmanconfig
+/package-lock.json

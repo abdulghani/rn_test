@@ -17,6 +17,7 @@ import {
   Text,
   useColorScheme,
   View,
+  ViewStyle,
 } from "react-native";
 import {
   Colors,
@@ -58,7 +59,8 @@ const Section: React.FC<{
 
 const App = () => {
   const isDarkMode = false;
-  const backgroundStyle = {
+  const backgroundStyle: ViewStyle = {
+    flex: 1,
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
