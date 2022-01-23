@@ -29,5 +29,5 @@ If you're using `vscode`, install these vscode extensions for this project
 if ios don't build. do the following
 
 - clean ios project `npm run ios:clean`
-- reset pods `npm run ios:reset`
+- reset system pods `npm run ios:reset`
 - install pods `npm install`
