@@ -23,6 +23,8 @@ const config: Config.InitialOptions = {
     "\\.tsx?$": "babel-jest",
     "\\.jsx$": "babel-jest",
   },
+  testPathIgnorePatterns: ["/node_modules/"],
+  transformIgnorePatterns: ["/node_modules/", "\\.pnp\\.[^\\/]+$"],
   rootDir: process.cwd(),
   reporters: ["default", "jest-junit"],
   testResultsProcessor: "jest-junit",
