@@ -2,6 +2,7 @@ fastlane_version '2.53.1'
 
 # TUTORIAL
 # https://carloscuesta.me/blog/shipping-react-native-apps-with-fastlane
+# https://docs.fastlane.tools/getting-started/cross-platform/react-native/
 
 before_all do
   ensure_git_branch

@@ -65,7 +65,8 @@
     "ios/": true,
     "android/": true,
     ".npmrc": true,
-    ".nvmrc": true
+    ".nvmrc": true,
+    ".fastlane": true
   },
   "jestrunner.jestCommand": "npm run test -- --no-cache --verbose --watch --detectOpenHandles --runInBand --coverage --testPathPattern"
 }
