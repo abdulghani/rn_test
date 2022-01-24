@@ -11,11 +11,6 @@ check_platform() {
 }
 check_platform
 
-pod_install() {
-    echo ""
-    echo "EXECUTING FROM ($PROJECT_PATH)"
-
-    cd "$PROJECT_PATH/ios"
-    pod install
-}
-pod_install
+xcode-select --install
+brew install ruby
+brew install fastlane
