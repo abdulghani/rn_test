@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 0.0.2 (2022-01-27)
 
+
+### Bug Fixes
+
+* add push command ([b0ecd06](https://github.com/abdulghani/rn_test/commit/b0ecd06092ec84133f952f5b169d489d7c9f1842))
+
+### 0.0.2 (2022-01-27)
+
 ### Features
 
 - add prettier ([bf29bb6](https://github.com/abdulghani/rn_test/commit/bf29bb665d4738c36b7732b31a3a0652533525cf))
