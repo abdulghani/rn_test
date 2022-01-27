@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/abdulghani/rn_test/compare/v0.0.6...v0.0.7) (2022-01-27)
+
+### Bug Fixes
+
+- update name ([0c8a765](https://github.com/abdulghani/rn_test/commit/0c8a765da5b0841071b85b4f6a95964075faad36))
+
 ### [0.0.6](https://github.com/abdulghani/rn_test/compare/v0.0.3...v0.0.6) (2022-01-27)
 
 ### Bug Fixes
