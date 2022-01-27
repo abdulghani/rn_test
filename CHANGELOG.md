@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.10 (2022-01-27)
+
+
+### Bug Fixes
+
+* update paths-ignore ([7467f82](https://github.com/abdulghani/rn_test/commit/7467f82a41dde8c480b10a66398d0e7756a0bd7f))
+
 ### 0.0.9 (2022-01-27)
 
 
