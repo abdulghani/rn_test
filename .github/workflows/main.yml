@@ -6,6 +6,8 @@ on:
       - main
     paths-ignore:
       - CHANGELOG.md
+      - package-lock.json
+      - package.json
   pull_request:
     branches:
       - main
