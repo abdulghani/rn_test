@@ -28,7 +28,9 @@
     "update:app-name": "ts-node ./.scripts/update-name.ts",
     "vscode:settings": "[ ! $CI ] && cp ./.vscode/settings.example.json ./.vscode/settings.json || echo \"RUNNING IN CI ENV\"",
     "ios:setup": "[ ! $CI ] && bash ./.scripts/ios-setup.sh || echo \"RUNNING IN CI ENV\"",
-    "env:file": "[ ! $CI ] && bash ./.scripts/env-files.sh || echo \"RUNNING IN CI ENV\""
+    "env:file": "[ ! $CI ] && bash ./.scripts/env-files.sh || echo \"RUNNING IN CI ENV\"",
+    "release": "./node_modules/.bin/standard-version --release-as minor",
+    "release:bugfix": "./node_modules/.bin/standard-version --release-as patch"
   },
   "dependencies": {
     "@react-native-community/push-notification-ios": "^1.10.1",
@@ -64,6 +66,7 @@
     "plist": "^3.0.4",
     "prettier": "^2.5.1",
     "react-test-renderer": "17.0.2",
+    "standard-version": "^9.3.2",
     "ts-jest": "^27.1.3",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4",

@@ -95,3 +95,61 @@ jobs:
           npm install
       - name: install pods
         run: bash ./.scripts/ios-podinstall.sh
+  
+  release:
+    needs:
+      - install_dependencies
+      - lint
+      - tests
+    runs-on: ubuntu-latest
+    environment:
+      name: CREATE_RELEASE
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          check-latest: true
+      - name: restore node_modules cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          path: |
+            node_modules
+      - name: create release
+        run: |
+          npm run release
+      - name: committing release
+        uses: EndBug/add-and-commit@v8
+        with:
+          default_author: github_actions
+
+  bugfix_release:
+    needs:
+      - install_dependencies
+      - lint
+      - tests
+    runs-on: ubuntu-latest
+    environment:
+      name: CREATE_BUGFIX_RELEASE
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          check-latest: true
+      - name: restore node_modules cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          path: |
+            node_modules
+      - name: create release
+        run: |
+          npm run release:bugfix
+      - name: committing release
+        uses: EndBug/add-and-commit@v8
+        with:
+          default_author: github_actions
+
+
