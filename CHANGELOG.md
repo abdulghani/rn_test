@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.5 (2022-01-27)
+
+
+### Bug Fixes
+
+* change committer name ([6939ba5](https://github.com/abdulghani/rn_test/commit/6939ba5e9892150484cce8c7568cee17316e73b3))
+
 ### 0.0.4 (2022-01-27)
 
 
