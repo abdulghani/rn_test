@@ -123,11 +123,9 @@ jobs:
       - name: create release
         run: |
           npm run release
-      - name: committing release
-        uses: EndBug/add-and-commit@v8
-        with:
-          default_author: github_actions
-          push: --follow-tags origin ${{ GITHUB.GITHUB_REF_NAME }}
+      - name: push tags
+        run: |
+          git push --follow-tags origin ${{ GITHUB.GITHUB_REF_NAME }}
 
   bugfix_release:
     needs:
@@ -156,10 +154,8 @@ jobs:
       - name: create release
         run: |
           npm run release:bugfix
-      - name: committing release
-        uses: EndBug/add-and-commit@v8
-        with:
-          default_author: github_actions
-          push: --follow-tags origin ${{ GITHUB.GITHUB_REF_NAME }}
+      - name: push tags
+        run: |
+          git push --follow-tags origin ${{ GITHUB.GITHUB_REF_NAME }}
 
 
