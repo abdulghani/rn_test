@@ -106,6 +106,8 @@ jobs:
       name: CREATE_RELEASE
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ SECRETS.CI_ACCESS_TOKEN }}      
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
@@ -118,14 +120,12 @@ jobs:
             node_modules
       - name: configure git
         run: |
-          git config --global user.email "contact.abdulghani@gmail.com" &&
-          git config --global user.name "Abdul Ghani"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" &&
+          git config --global user.name "GitHub Actions"
       - name: create release
         run: |
           npm run release
       - name: push tags
-        env:
-          GITHUB_TOKEN: ${{ SECRETS.CI_ACCESS_TOKEN }}
         run: |
           git push --follow-tags origin ${{ GITHUB.GITHUB_REF_NAME }}
 
@@ -139,6 +139,8 @@ jobs:
       name: CREATE_BUGFIX_RELEASE
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ SECRETS.CI_ACCESS_TOKEN }}
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
@@ -151,14 +153,12 @@ jobs:
             node_modules
       - name: configure git
         run: |
-          git config --global user.email "contact.abdulghani@gmail.com" &&
-          git config --global user.name "Abdul Ghani"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" &&
+          git config --global user.name "GitHub Actions"
       - name: create release
         run: |
           npm run release:bugfix
       - name: push tags
-        env:
-          GITHUB_TOKEN: ${{ SECRETS.CI_ACCESS_TOKEN }}
         run: |
           git push --follow-tags origin ${{ GITHUB.GITHUB_REF_NAME }}
 
