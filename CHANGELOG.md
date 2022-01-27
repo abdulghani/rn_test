@@ -2,33 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### 0.0.5 (2022-01-27)
-
+### [0.0.6](https://github.com/abdulghani/rn_test/compare/v0.0.3...v0.0.6) (2022-01-27)
 
 ### Bug Fixes
 
-* change committer name ([6939ba5](https://github.com/abdulghani/rn_test/commit/6939ba5e9892150484cce8c7568cee17316e73b3))
+- change committer name ([6939ba5](https://github.com/abdulghani/rn_test/commit/6939ba5e9892150484cce8c7568cee17316e73b3))
+- use access token to push ([5b62a7e](https://github.com/abdulghani/rn_test/commit/5b62a7e70b14d6c48a533cab9ef422b8a4477784))
+
+### 0.0.5 (2022-01-27)
+
+### Bug Fixes
+
+- change committer name ([6939ba5](https://github.com/abdulghani/rn_test/commit/6939ba5e9892150484cce8c7568cee17316e73b3))
 
 ### 0.0.4 (2022-01-27)
 
-
 ### Bug Fixes
 
-* use access token to push ([5b62a7e](https://github.com/abdulghani/rn_test/commit/5b62a7e70b14d6c48a533cab9ef422b8a4477784))
+- use access token to push ([5b62a7e](https://github.com/abdulghani/rn_test/commit/5b62a7e70b14d6c48a533cab9ef422b8a4477784))
 
 ### 0.0.3 (2022-01-27)
 
-
 ### Bug Fixes
 
-* update release trigger ([cdda368](https://github.com/abdulghani/rn_test/commit/cdda368833ecf85865631e9b8860ed105f69aeca))
+- update release trigger ([cdda368](https://github.com/abdulghani/rn_test/commit/cdda368833ecf85865631e9b8860ed105f69aeca))
 
 ### 0.0.2 (2022-01-27)
 
-
 ### Bug Fixes
 
-* add push command ([b0ecd06](https://github.com/abdulghani/rn_test/commit/b0ecd06092ec84133f952f5b169d489d7c9f1842))
+- add push command ([b0ecd06](https://github.com/abdulghani/rn_test/commit/b0ecd06092ec84133f952f5b169d489d7c9f1842))
 
 ### 0.0.2 (2022-01-27)
 
