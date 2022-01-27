@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.9 (2022-01-27)
+
+
+### Bug Fixes
+
+* ignore main workflow on changelog update ([fc42c01](https://github.com/abdulghani/rn_test/commit/fc42c011559d22c54ff2807ad95a6250a0d2f6ad))
+
 ### 0.0.8 (2022-01-27)
 
 
