@@ -3,7 +3,7 @@ name: RN Release CI
 on:
   push:
     tags:
-      v**
+      - v**
   
 jobs:
   install_dependencies:
