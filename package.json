@@ -29,8 +29,8 @@
     "vscode:settings": "[ ! $CI ] && cp ./.vscode/settings.example.json ./.vscode/settings.json || echo \"RUNNING IN CI ENV\"",
     "ios:setup": "[ ! $CI ] && bash ./.scripts/ios-setup.sh || echo \"RUNNING IN CI ENV\"",
     "env:file": "[ ! $CI ] && bash ./.scripts/env-files.sh || echo \"RUNNING IN CI ENV\"",
-    "release": "./node_modules/.bin/standard-version --release-as minor",
-    "release:bugfix": "./node_modules/.bin/standard-version --release-as patch"
+    "release": "[ $CI ] && ./node_modules/.bin/standard-version --release-as minor || echo \"NOT RUNNING IN CI ENV\"",
+    "release:bugfix": "[ $CI ] && ./node_modules/.bin/standard-version --release-as patch || echo \"NOT RUNNING IN CI ENV\""
   },
   "dependencies": {
     "@react-native-community/push-notification-ios": "^1.10.1",
