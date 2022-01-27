@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - CHANGELOG.md
-      - package-lock.json
-      - package.json
+    # paths-ignore:
+    #   - CHANGELOG.md
+    #   - package-lock.json
+    #   - package.json
   pull_request:
     branches:
       - main
