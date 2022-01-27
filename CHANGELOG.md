@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.4 (2022-01-27)
+
+
+### Bug Fixes
+
+* use access token to push ([5b62a7e](https://github.com/abdulghani/rn_test/commit/5b62a7e70b14d6c48a533cab9ef422b8a4477784))
+
 ### 0.0.3 (2022-01-27)
 
 
