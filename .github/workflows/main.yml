@@ -124,6 +124,8 @@ jobs:
         run: |
           npm run release
       - name: push tags
+        env:
+          GITHUB_TOKEN: ${{ SECRETS.CI_ACCESS_TOKEN }}
         run: |
           git push --follow-tags origin ${{ GITHUB.GITHUB_REF_NAME }}
 
@@ -155,6 +157,8 @@ jobs:
         run: |
           npm run release:bugfix
       - name: push tags
+        env:
+          GITHUB_TOKEN: ${{ SECRETS.CI_ACCESS_TOKEN }}
         run: |
           git push --follow-tags origin ${{ GITHUB.GITHUB_REF_NAME }}
 
